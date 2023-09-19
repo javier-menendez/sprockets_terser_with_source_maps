@@ -9,4 +9,3 @@ require 'terser'
 Sprockets.register_compressor 'application/javascript',
                               :terser_with_source_maps,
                               SprocketsTerserWithSourceMaps::Compressor
-

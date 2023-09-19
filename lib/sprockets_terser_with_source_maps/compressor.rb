@@ -4,7 +4,6 @@ require 'terser/compressor'
 
 module SprocketsTerserWithSourceMaps
   class Compressor < Terser::Compressor
-
     def initialize(options = {})
       @options = options
       super @options

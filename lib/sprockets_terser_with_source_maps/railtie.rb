@@ -4,7 +4,6 @@ require 'action_controller/railtie'
 
 module SprocketsTerserWithSourceMaps
   class Railtie < ::Rails::Railtie
-
     initializer 'sprockets-terser-with-source-maps.environment', group: :all do |app|
       config = app.config
       config.assets.sourcemaps_prefix ||= 'maps'
