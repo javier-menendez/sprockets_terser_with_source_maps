@@ -3,7 +3,7 @@
 require 'terser/compressor'
 
 module SprocketsTerserWithSourceMaps
-  class Compressor < Terser::Compressor
+  class Compressor < Terser::Compressor # :nodoc:
     def initialize(options = {})
       @options = options
       super @options
@@ -44,7 +44,7 @@ module SprocketsTerserWithSourceMaps
       file_url = filename_to_url(filename)
 
       FileUtils.mkdir_p File.dirname(file_path)
-      File.open(file_path, 'w') { |f| f.write data }
+      File.write(file_path, data)
       gzip_file(file_path) if gzip?
       file_url
     end
@@ -70,7 +70,7 @@ module SprocketsTerserWithSourceMaps
       Zlib::GzipWriter.open("#{path}.gz") do |gz|
         gz.mtime = File.mtime(path)
         gz.orig_name = path
-        gz.write IO.binread(path)
+        gz.write File.binread(path)
       end
     end
 
