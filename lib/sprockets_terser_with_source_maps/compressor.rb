@@ -15,9 +15,9 @@ module SprocketsTerserWithSourceMaps
       data = input.fetch(:data)
       name = input.fetch(:name)
 
-      compressed_data, source_map_json = @terser.compile_with_map(data, input_options)
+      compressed_js, map = @terser.compile_with_map(data, input_options)
 
-      sourcemap = JSON.parse(source_map_json)
+      sourcemap = JSON.parse(map)
 
       # Generate uncompressed asset
       uncompressed_url = generate_asset_file(name, data, Rails.application.config.assets.uncompressed_prefix)
@@ -33,7 +33,7 @@ module SprocketsTerserWithSourceMaps
         'js.map'
       )
 
-      compressed_data.concat "\n//# sourceMappingURL=#{sourcemap_url}\n"
+      compressed_js.concat "\n//# sourceMappingURL=#{sourcemap_url}\n"
     end
 
     private
