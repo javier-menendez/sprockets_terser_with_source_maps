@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
+require 'sprockets/digest_utils'
 require 'terser/compressor'
 
 module SprocketsTerserWithSourceMaps
   class Compressor < Terser::Compressor # :nodoc:
     def initialize(options = {})
-      @options = options
+      @options = options.merge(Rails.application.config.assets.terser.to_h)
       super @options
     end
 

@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
+require 'sprockets/railtie'
+
+ENV['RAILS_ENV'] ||= 'test'
+require 'rails_app/config/environment'
 require 'sprockets_terser_with_source_maps'
 
 RSpec.configure do |config|
