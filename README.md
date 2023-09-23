@@ -1,3 +1,5 @@
+[![CI](https://github.com/javier-menendez/sprockets_terser_with_source_maps/actions/workflows/ci.yml/badge.svg)](https://github.com/javier-menendez/sprockets_terser_with_source_maps/actions/workflows/ci.yml)
+
 # SprocketsTerserWithSourceMaps
 
 Create source maps when compressing assets in your Rails applications.
