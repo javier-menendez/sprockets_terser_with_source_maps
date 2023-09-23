@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Specify your gem's dependencies in sprockets_terser_with_source_maps.gemspec
-gemspec
+gemspec path: '..'
 
 gem 'railties', '~> 5.2.0'
 gem 'rake', '~> 12.0'
