@@ -20,10 +20,15 @@ module SprocketsTerserWithSourceMaps
 
       sourcemap = JSON.parse(map)
 
-      # Generate uncompressed asset
-      uncompressed_url = generate_asset_file(name, data, Rails.application.config.assets.uncompressed_prefix)
+      if Rails.application.config.assets.sourcemaps_embed_source
+        sourcemap['sourcesContent'] = [data]
+      else
+        # Generate uncompressed asset
+        uncompressed_url = generate_asset_file(name, data, Rails.application.config.assets.uncompressed_prefix)
 
-      sourcemap['sources'] = [uncompressed_url]
+        sourcemap['sources'] = [uncompressed_url]
+      end
+
       sourcemap['file'] = "#{name}.js"
       sourcemap_json = sourcemap.to_json
 

@@ -3,9 +3,10 @@
 require 'bundler/setup'
 require 'sprockets/railtie'
 
+require 'sprockets_terser_with_source_maps'
+
 ENV['RAILS_ENV'] ||= 'test'
 require 'rails_app/config/environment'
-require 'sprockets_terser_with_source_maps'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
