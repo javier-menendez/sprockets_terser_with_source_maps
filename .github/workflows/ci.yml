@@ -26,6 +26,5 @@ jobs:
           bundler-cache: true
       - name: Run tests
         run: bundle exec rspec spec
-        continue-on-error: ${{ matrix.gemfile == 'Gemfile' }}
       - name: Run rubocop
         run: bundle exec rubocop
