@@ -6,6 +6,11 @@
 /pkg/
 /spec/reports/
 /tmp/
+/**/tmp
+/**/maps
+/**/sources
+/**/public
+!/**/.keep
 /.idea/
 Gemfile*.lock
 
