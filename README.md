@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/sprockets_terser_with_source_maps.svg)](https://badge.fury.io/rb/sprockets_terser_with_source_maps)
 [![CI](https://github.com/javier-menendez/sprockets_terser_with_source_maps/actions/workflows/ci.yml/badge.svg)](https://github.com/javier-menendez/sprockets_terser_with_source_maps/actions/workflows/ci.yml)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 
