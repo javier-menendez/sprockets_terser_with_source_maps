@@ -12,7 +12,12 @@ It is meant to be used as a replacement for javascript compressor.
 This gem is ported from [sprockets_uglifier_with_source_maps](https://github.com/AlexanderPavlenko/sprockets_uglifier_with_source_maps)
 to generate source maps using terser as compressor.
 
-Rails versions supported: 4.2, 5.
+## Rails Supported Versions
+
+| Version | Supported          |
+|---------|--------------------|
+| 5.x     | :white_check_mark: |
+| 4.x     | :white_check_mark: |
 
 ## Installation
 
