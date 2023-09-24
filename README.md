@@ -17,7 +17,7 @@ to generate source maps using terser as compressor.
 | Version | Supported          |
 |---------|--------------------|
 | 5.x     | :white_check_mark: |
-| 4.x     | :white_check_mark: |
+| 4.2.x   | :white_check_mark: |
 
 ## Installation
 
