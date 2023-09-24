@@ -27,7 +27,7 @@ RSpec.describe SprocketsTerserWithSourceMaps::Railtie do
     it 'generates assets with sources and maps' do
       app.load_tasks
 
-      path = "#{app.assets_manifest.dir}/app-#{Rails.application.assets['app.js'].etag}.js"
+      path = "#{app.assets_manifest.dir}/application-#{Rails.application.assets['application.js'].etag}.js"
 
       prefix = Rails.application.config.assets.prefix
       source_prefix = Rails.application.config.assets.uncompressed_prefix
@@ -36,7 +36,7 @@ RSpec.describe SprocketsTerserWithSourceMaps::Railtie do
         'public',
         prefix,
         source_prefix,
-        'app-74b9b016d5c27e498f5a48fcdb2c0c4a4dcc2f366887ba2aa88c6add45f0054e.js'
+        'application-67edb0733821d001c895de576601b754165d9a2a350e6abd1e8c009d9ea24c1c.js'
       )
 
       map_prefix = Rails.application.config.assets.sourcemaps_prefix
@@ -45,10 +45,9 @@ RSpec.describe SprocketsTerserWithSourceMaps::Railtie do
         'public',
         prefix,
         map_prefix,
-        'app-5183f15a684c3bdf30d628e250990a01941efe5dc45abbe356c3b8893cd6f264.js.map'
+        'application-8e484580fdd7121444478bdee52a61a6e8d44684c6c7fe030bde5979a58a13c6.js.map'
       )
 
-      Rake.application['assets:clobber'].execute
       Rake.application['assets:precompile'].execute
 
       expect(File.exist?(path)).to be
