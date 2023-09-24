@@ -16,6 +16,10 @@ jobs:
           - ruby: 2.6
             gemfile: "gemfiles/Gemfile.rails-5.0.x.sprockets-4.x"
           - ruby: 2.6
+            gemfile: "gemfiles/Gemfile.rails-5.1.x"
+          - ruby: 2.6
+            gemfile: "gemfiles/Gemfile.rails-5.1.x.sprockets-4.x"
+          - ruby: 2.6
             gemfile: "gemfiles/Gemfile.rails-5.2.x"
           - ruby: 2.6
             gemfile: "gemfiles/Gemfile.rails-5.2.x.sprockets-4.x"
@@ -23,6 +27,10 @@ jobs:
             gemfile: "gemfiles/Gemfile.rails-5.0.x"
           - ruby: 2.7
             gemfile: "gemfiles/Gemfile.rails-5.0.x.sprockets-4.x"
+          - ruby: 2.7
+            gemfile: "gemfiles/Gemfile.rails-5.1.x"
+          - ruby: 2.7
+            gemfile: "gemfiles/Gemfile.rails-5.1.x.sprockets-4.x"
           - ruby: 2.7
             gemfile: "gemfiles/Gemfile.rails-5.2.x"
           - ruby: 2.7
