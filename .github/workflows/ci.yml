@@ -7,6 +7,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # Ruby 2.6.x
           - ruby: 2.6
             gemfile: "gemfiles/Gemfile.rails-4.2.x"
           - ruby: 2.6
@@ -25,6 +26,9 @@ jobs:
             gemfile: "gemfiles/Gemfile.rails-5.2.x.sprockets-4.x"
           - ruby: 2.6
             gemfile: "gemfiles/Gemfile.rails-6.0.x.sprockets-4.x"
+          - ruby: 2.6
+            gemfile: "gemfiles/Gemfile.rails-6.1.x.sprockets-4.x"
+          # Ruby 2.7.x
           - ruby: 2.7
             gemfile: "gemfiles/Gemfile.rails-5.0.x"
           - ruby: 2.7
@@ -40,11 +44,14 @@ jobs:
           - ruby: 2.7
             gemfile: "gemfiles/Gemfile.rails-6.0.x.sprockets-4.x"
           - ruby: 2.7
-            gemfile: Gemfile
+            gemfile: "gemfiles/Gemfile.rails-6.1.x.sprockets-4.x"
+          # Ruby 3.0.x
           - ruby: '3.0'
-            gemfile: Gemfile
+            gemfile: "gemfiles/Gemfile.rails-6.1.x.sprockets-4.x"
+          # Ruby 3.1.x
           - ruby: 3.1
             gemfile: Gemfile
+          # Ruby 3.2.x
           - ruby: 3.2
             gemfile: Gemfile
 
