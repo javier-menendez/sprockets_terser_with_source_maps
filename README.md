@@ -9,7 +9,7 @@ Create source maps when compressing assets in your Rails applications.
 This gem uses Terser to create source maps for your concatenated javascripts in Rails.
 It is meant to be used as a replacement for javascript compressor.
 
-This gem is ported from [sprockets_uglifier_with_source_maps](https://github.com/AlexanderPavlenko/sprockets_uglifier_with_source_maps)
+This is a fork from [sprockets_uglifier_with_source_maps](https://github.com/AlexanderPavlenko/sprockets_uglifier_with_source_maps)
 to generate source maps using terser as compressor.
 
 ## Rails Supported Versions
