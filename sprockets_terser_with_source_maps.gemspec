@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.metadata = {
     'homepage_uri' => spec.homepage,
     'source_code_uri' => 'https://github.com/javier-menendez/sprockets_terser_with_source_maps',
-    'changelog_uri' => 'https://github.com/javier-menendez/sprockets_terser_with_source_maps',
+    'changelog_uri' => 'https://github.com/javier-menendez/sprockets_terser_with_source_maps/CHANGELOG.md',
     'rubygems_mfa_required' => 'true'
   }
 
@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'terser', '~> 1.1.0'
 
   # Specify which files should be added to the gem when it is released.
-  spec.files = Dir['README.md', 'lib/**/*.rb', 'LICENSE.txt']
+  spec.files = Dir['README.md', 'lib/**/*.rb', 'LICENSE.txt', 'CHANGELOG.md']
 
   spec.require_paths = ['lib']
 end
