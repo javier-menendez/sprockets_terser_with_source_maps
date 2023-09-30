@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
     'source_code_uri' => spec.homepage,
     'changelog_uri' => 'https://github.com/javier-menendez/sprockets_terser_with_source_maps/blob/main/CHANGELOG.md',
     'documentation_uri' => 'https://www.rubydoc.info/gems/sprockets_terser_with_source_maps',
+    'bug_tracker_uri' => 'https://github.com/javier-menendez/sprockets_terser_with_source_maps/issues',
     'rubygems_mfa_required' => 'true'
   }
 
