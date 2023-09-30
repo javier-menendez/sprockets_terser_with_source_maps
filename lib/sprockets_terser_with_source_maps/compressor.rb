@@ -2,10 +2,15 @@
 
 require 'sprockets/digest_utils'
 require 'terser/compressor'
+require 'logger'
 
 module SprocketsTerserWithSourceMaps
   class Compressor < Terser::Compressor # :nodoc:
+    attr_accessor :logger
+
     def initialize(options = {})
+      @logger = Logger.new($stdout)
+      @logger.level = Logger::INFO
       @options = options.merge(Rails.application.config.assets.terser.to_h)
       super @options
     end
@@ -24,7 +29,7 @@ module SprocketsTerserWithSourceMaps
         sourcemap['sourcesContent'] = [data]
       else
         # Generate uncompressed asset
-        uncompressed_url = generate_asset_file(name, data, Rails.application.config.assets.uncompressed_prefix)
+        uncompressed_url, = generate_asset_file(name, data, Rails.application.config.assets.uncompressed_prefix)
 
         sourcemap['sources'] = [uncompressed_url]
       end
@@ -33,11 +38,12 @@ module SprocketsTerserWithSourceMaps
       sourcemap_json = sourcemap.to_json
 
       # Generate sourcemap file
-      sourcemap_url = generate_asset_file(
+      sourcemap_url, sourcemap_path = generate_asset_file(
         name, sourcemap_json,
         Rails.application.config.assets.sourcemaps_prefix,
         'js.map'
       )
+      logger.info "Writing #{sourcemap_path}"
 
       compressed_js.concat "\n//# sourceMappingURL=#{sourcemap_url}\n"
     end
@@ -52,7 +58,8 @@ module SprocketsTerserWithSourceMaps
       FileUtils.mkdir_p File.dirname(file_path)
       File.write(file_path, data)
       gzip_file(file_path) if gzip?
-      file_url
+
+      [file_url, file_path]
     end
 
     def filename_to_url(filename)
