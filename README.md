@@ -14,11 +14,28 @@ to generate source maps using terser as compressor.
 
 ## Rails Supported Versions
 
-| Version | Supported          |
-|---------|--------------------|
-| 6.x     | :white_check_mark: |
-| 5.x     | :white_check_mark: |
-| 4.2.x   | :white_check_mark: |
+<table>
+    <thead>
+    <tr>
+        <th>Version</th>
+        <th>Supported</th>
+    </tr>
+  </thead>
+<tbody>
+    <tr>
+        <td>6.x</td>
+        <td>&checkmark;</td>
+    </tr>
+        <tr>
+        <td>5.x</td>
+        <td>&checkmark;</td>
+    </tr>
+    <tr>
+        <td>4.2.x</td>
+        <td>&checkmark;</td>
+    </tr>
+</tbody>
+</table>
 
 ## Installation
 
