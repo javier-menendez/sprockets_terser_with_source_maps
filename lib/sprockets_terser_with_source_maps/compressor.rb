@@ -5,7 +5,8 @@ require 'terser/compressor'
 require 'logger'
 
 module SprocketsTerserWithSourceMaps
-  class Compressor < Terser::Compressor # :nodoc:
+  # Custom compressor to generate sourcemaps
+  class Compressor < Terser::Compressor
     attr_accessor :logger
 
     def initialize(options = {})
