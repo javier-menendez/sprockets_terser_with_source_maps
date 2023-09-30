@@ -6,7 +6,4 @@ source 'https://rubygems.org'
 gemspec path: '..'
 
 gem 'railties', '~> 6.1.0'
-gem 'rake', '~> 12.0'
-gem 'rspec', '~> 3.0'
-gem 'rubocop', group: 'development', require: false
 gem 'sprockets', '~> 4.0'

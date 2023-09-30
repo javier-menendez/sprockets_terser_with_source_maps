@@ -23,3 +23,6 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+
+Gemspec/DevelopmentDependencies:
+  EnforcedStyle: gemspec
