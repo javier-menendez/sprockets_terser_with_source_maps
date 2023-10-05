@@ -53,6 +53,7 @@ RSpec.describe SprocketsTerserWithSourceMaps::Railtie do
       expect(File.exist?(path)).to be
       expect(File.exist?(source_path)).to be
       expect(File.exist?(map_path)).to be
+      expect(File.exist?("#{map_path}.gz")).to be
     end
   end
 end
