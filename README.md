@@ -9,7 +9,8 @@ Create source maps when compressing assets in your Rails applications.
 This gem uses Terser to create source maps for your concatenated javascripts in Rails.
 It is meant to be used as a replacement for javascript compressor.
 
-This is a fork from [sprockets_uglifier_with_source_maps](https://github.com/AlexanderPavlenko/sprockets_uglifier_with_source_maps)
+This is a fork
+from [sprockets_uglifier_with_source_maps](https://github.com/AlexanderPavlenko/sprockets_uglifier_with_source_maps)
 to generate source maps using terser as compressor.
 
 ## Rails Supported Versions
@@ -22,6 +23,10 @@ to generate source maps using terser as compressor.
     </tr>
   </thead>
 <tbody>
+    <tr>
+        <td>7.x</td>
+        <td>&checkmark;</td>
+    </tr>
     <tr>
         <td>6.x</td>
         <td>&checkmark;</td>
@@ -61,9 +66,10 @@ In your Rails applications environment configuration:
 
 If you need to pass options to terser:
 
-    config.assets.terser = {output: {beautify: true, indent_level: 2}, compress: {drop_console: true}}
+    config.assets.terser = {output: {beautify: true, indent_level: 2}}
 
-Your assets will be built as normal, also maps and concatenated sources will be provided as well in `public/assets/maps` and `public/assets/sources`.
+Your assets will be built as normal, also maps and concatenated sources will be provided as well in `public/assets/maps`
+and `public/assets/sources`.
 These subdirs may be configured:
 
     config.assets.sourcemaps_prefix = 'my_maps'
@@ -77,13 +83,16 @@ You can optionally skip gzipping your maps and sources:
 
     config.assets.sourcemaps_gzip = false
 
-By default maps and sources are defined relatively and will be fetched from the same domain your js file is served from. If you are using a CDN you may not want this - instead you might want to use a direct link to your site so you can more easily implement IP or Basic Auth protection:
+By default maps and sources are defined relatively and will be fetched from the same domain your js file is served from.
+If you are using a CDN you may not want this - instead you might want to use a direct link to your site so you can more
+easily implement IP or Basic Auth protection:
 
     # set to a url - js will be served from 'http://cdn.host.com' but source map links will use 'http://some.host.com/'
 
     config.assets.sourcemaps_url_root = 'http://some.host.com/'
 
-If you use CloudFront you might want to generate a signed url for these files that limits access based on IP address. You can do that by setting sourcemaps_url_root to a Proc and handling your URL signing there:
+If you use CloudFront you might want to generate a signed url for these files that limits access based on IP address.
+You can do that by setting sourcemaps_url_root to a Proc and handling your URL signing there:
 
     # using a Proc - see the AWS SDK docs for everything required to make this work
     config.assets.sourcemaps_url_root = Proc.new { |file| MyApp.generate_a_signed_url_for file }
@@ -112,8 +121,9 @@ If sourcemaps are not generated, try `rm -rf tmp/cache`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sprockets_terser_with_source_maps. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/sprockets_terser_with_source_maps/blob/master/CODE_OF_CONDUCT.md).
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sprockets_terser_with_source_maps.
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to
+the [code of conduct](https://github.com/[USERNAME]/sprockets_terser_with_source_maps/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -121,4 +131,6 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the SprocketsTerserWithSourceMaps project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/sprockets_terser_with_source_maps/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the SprocketsTerserWithSourceMaps project's codebases, issue trackers, chat rooms and mailing
+lists is expected to follow
+the [code of conduct](https://github.com/[USERNAME]/sprockets_terser_with_source_maps/blob/master/CODE_OF_CONDUCT.md).

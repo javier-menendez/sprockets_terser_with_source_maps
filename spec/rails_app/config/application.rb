@@ -13,3 +13,8 @@ module RailsApp
     config.eager_load = false
   end
 end
+
+# Cache disabled
+Rails.application.config.assets.configure do |env|
+  env.cache = ActiveSupport::Cache.lookup_store(:null_store)
+end
