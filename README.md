@@ -66,7 +66,7 @@ In your Rails applications environment configuration:
 
 If you need to pass options to terser:
 
-    config.assets.terser = {output: {beautify: true, indent_level: 2}, compress: {drop_console: true}}
+    config.assets.terser = {output: {beautify: true, indent_level: 2}}
 
 Your assets will be built as normal, also maps and concatenated sources will be provided as well in `public/assets/maps`
 and `public/assets/sources`.
