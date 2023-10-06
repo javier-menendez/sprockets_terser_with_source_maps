@@ -30,7 +30,7 @@ module SprocketsTerserWithSourceMaps
         sourcemap['sourcesContent'] = [data]
       else
         # Generate uncompressed asset
-        uncompressed_url, = generate_asset_file(name, data, Rails.application.config.assets.uncompressed_prefix)
+        uncompressed_url = generate_asset_file(name, data, Rails.application.config.assets.uncompressed_prefix)
 
         sourcemap['sources'] = [uncompressed_url]
       end
@@ -39,12 +39,11 @@ module SprocketsTerserWithSourceMaps
       sourcemap_json = sourcemap.to_json
 
       # Generate sourcemap file
-      sourcemap_url, sourcemap_path = generate_asset_file(
+      sourcemap_url = generate_asset_file(
         name, sourcemap_json,
         Rails.application.config.assets.sourcemaps_prefix,
         'js.map'
       )
-      logger.info "Writing #{sourcemap_path}"
 
       compressed_js.concat "\n//# sourceMappingURL=#{sourcemap_url}\n"
     end
@@ -53,14 +52,16 @@ module SprocketsTerserWithSourceMaps
 
     def generate_asset_file(name, data, prefix, extension = 'js')
       filename = File.join(Rails.application.config.assets.prefix, prefix, "#{name}-#{digest(data)}.#{extension}")
-      file_path = File.join(Rails.public_path, filename)
+      file_path = File.join(Rails.public_path.to_s, filename)
       file_url = filename_to_url(filename)
+
+      logger.info "Writing #{file_path}" if !File.exist?(file_path) && file_path.include?('.map')
 
       FileUtils.mkdir_p File.dirname(file_path)
       File.write(file_path, data)
       gzip_file(file_path) if gzip?
 
-      [file_url, file_path]
+      file_url
     end
 
     def filename_to_url(filename)
@@ -81,6 +82,8 @@ module SprocketsTerserWithSourceMaps
     end
 
     def gzip_file(path)
+      logger.info "Writing #{path}.gz" if !File.exist?("#{path}.gz") && path.include?('.map')
+
       Zlib::GzipWriter.open("#{path}.gz") do |gz|
         gz.mtime = File.mtime(path)
         gz.orig_name = path
