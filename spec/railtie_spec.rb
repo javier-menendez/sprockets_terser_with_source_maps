@@ -32,8 +32,7 @@ RSpec.describe SprocketsTerserWithSourceMaps::Railtie do
       prefix = Rails.application.config.assets.prefix
       source_prefix = Rails.application.config.assets.uncompressed_prefix
       source_path = File.join(
-        app.root,
-        'public',
+        Rails.public_path.to_s,
         prefix,
         source_prefix,
         'application-67edb0733821d001c895de576601b754165d9a2a350e6abd1e8c009d9ea24c1c.js'
@@ -41,8 +40,7 @@ RSpec.describe SprocketsTerserWithSourceMaps::Railtie do
 
       map_prefix = Rails.application.config.assets.sourcemaps_prefix
       map_path = File.join(
-        app.root,
-        'public',
+        Rails.public_path.to_s,
         prefix,
         map_prefix,
         'application-8e484580fdd7121444478bdee52a61a6e8d44684c6c7fe030bde5979a58a13c6.js.map'
@@ -53,6 +51,7 @@ RSpec.describe SprocketsTerserWithSourceMaps::Railtie do
       expect(File.exist?(path)).to be
       expect(File.exist?(source_path)).to be
       expect(File.exist?(map_path)).to be
+      expect(File.exist?("#{map_path}.gz")).to be
     end
   end
 end
