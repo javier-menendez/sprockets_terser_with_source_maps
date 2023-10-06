@@ -45,13 +45,27 @@ jobs:
             gemfile: "gemfiles/Gemfile.rails-6.0.x.sprockets-4.x"
           - ruby: 2.7
             gemfile: "gemfiles/Gemfile.rails-6.1.x.sprockets-4.x"
+          - ruby: 2.7
+            gemfile: "gemfiles/Gemfile.rails-7.0.x.sprockets-4.x"
           # Ruby 3.0.x
           - ruby: '3.0'
             gemfile: "gemfiles/Gemfile.rails-6.1.x.sprockets-4.x"
+          - ruby: '3.0'
+            gemfile: "gemfiles/Gemfile.rails-7.0.x.sprockets-4.x"
+          - ruby: '3.0'
+            gemfile: "gemfiles/Gemfile.rails-7.1.x.sprockets-4.x"
           # Ruby 3.1.x
           - ruby: 3.1
-            gemfile: Gemfile
+            gemfile: "gemfiles/Gemfile.rails-6.1.x.sprockets-4.x"
+          - ruby: 3.1
+            gemfile: "gemfiles/Gemfile.rails-7.0.x.sprockets-4.x"
+          - ruby: 3.1
+            gemfile: "gemfiles/Gemfile.rails-7.1.x.sprockets-4.x"
           # Ruby 3.2.x
+          - ruby: 3.2
+            gemfile: "gemfiles/Gemfile.rails-6.1.x.sprockets-4.x"
+          - ruby: 3.2
+            gemfile: "gemfiles/Gemfile.rails-7.0.x.sprockets-4.x"
           - ruby: 3.2
             gemfile: Gemfile
 
