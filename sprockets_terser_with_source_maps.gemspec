@@ -15,11 +15,9 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = Gem::Requirement.new('>= 2.2.0')
 
   spec.metadata = {
-    'homepage_uri' => spec.homepage,
-    'source_code_uri' => spec.homepage,
-    'changelog_uri' => 'https://github.com/javier-menendez/sprockets_terser_with_source_maps/blob/main/CHANGELOG.md',
-    'documentation_uri' => 'https://www.rubydoc.info/gems/sprockets_terser_with_source_maps',
-    'bug_tracker_uri' => 'https://github.com/javier-menendez/sprockets_terser_with_source_maps/issues',
+    'changelog_uri' => "#{spec.homepage}/blob/main/CHANGELOG.md",
+    'documentation_uri' => "https://www.rubydoc.info/gems/#{spec.name}/#{spec.version}",
+    'bug_tracker_uri' => "#{spec.homepage}/issues",
     'rubygems_mfa_required' => 'true'
   }
 
