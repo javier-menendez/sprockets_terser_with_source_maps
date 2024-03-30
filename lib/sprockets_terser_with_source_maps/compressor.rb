@@ -13,7 +13,7 @@ module SprocketsTerserWithSourceMaps
       @logger = Logger.new($stdout)
       @logger.level = Logger::INFO
       @options = options.merge(Rails.application.config.assets.terser.to_h)
-      super @options
+      super(@options)
     end
 
     def call(input)
