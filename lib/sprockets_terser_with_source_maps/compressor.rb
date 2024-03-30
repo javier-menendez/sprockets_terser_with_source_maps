@@ -45,7 +45,9 @@ module SprocketsTerserWithSourceMaps
         'js.map'
       )
 
-      compressed_js.concat "\n//# sourceMappingURL=#{sourcemap_url}\n"
+      js = compressed_js.concat "\n//# sourceMappingURL=#{sourcemap_url}\n"
+
+      { data: js, map: sourcemap }
     end
 
     private
