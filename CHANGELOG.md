@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.0 (31 March 2024)
+
+- Ruby required >= 2.6
+- Compressor output as hash with data key
+- Ruby 3.3.x added to CI matrix
+- Fix GHA warning for nodejs 16 deprecation
+- Documentation uri by version
+
 ## 1.1.0 (6 October 2023)
 
 - Ruby required >= 2.2
