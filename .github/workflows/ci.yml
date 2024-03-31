@@ -1,5 +1,11 @@
 name: CI
-on: [push, pull_request]
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -67,6 +73,13 @@ jobs:
           - ruby: 3.2
             gemfile: "gemfiles/Gemfile.rails-7.0.x.sprockets-4.x"
           - ruby: 3.2
+            gemfile: "gemfiles/Gemfile.rails-7.1.x.sprockets-4.x"
+          # Ruby 3.3.x
+          - ruby: 3.3
+            gemfile: "gemfiles/Gemfile.rails-6.1.x.sprockets-4.x"
+          - ruby: 3.3
+            gemfile: "gemfiles/Gemfile.rails-7.0.x.sprockets-4.x"
+          - ruby: 3.3
             gemfile: Gemfile
 
     env:
