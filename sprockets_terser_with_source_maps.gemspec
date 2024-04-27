@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   }
 
   spec.add_dependency 'sprockets-rails', '~> 3.0'
-  spec.add_dependency 'terser', '~> 1.1.0'
+  spec.add_dependency 'terser', '~> 1.2'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'railties', '>= 4.2'
