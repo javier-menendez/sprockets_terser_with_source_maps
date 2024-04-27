@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.0 (27 April 2024)
+
+- Terser dependency to ~> 1.2
+
 ## 2.0.0 (31 March 2024)
 
 - Ruby required >= 2.6
