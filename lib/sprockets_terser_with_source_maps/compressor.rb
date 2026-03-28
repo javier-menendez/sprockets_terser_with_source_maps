@@ -1,20 +1,35 @@
 # frozen_string_literal: true
 
 require 'sprockets/digest_utils'
-require 'terser/compressor'
+require 'sprockets_terser_with_source_maps/autoload'
 require 'logger'
 
 module SprocketsTerserWithSourceMaps
   # Custom compressor to generate sourcemaps
-  class Compressor < Terser::Compressor
+  class Compressor
     attr_accessor :logger
 
     def initialize(options = {})
       @logger = Logger.new($stdout)
       @logger.level = Logger::INFO
       @options = options.merge(Rails.application.config.assets.terser.to_h)
-      super(@options)
+      @cache_key = -"Terser:#{Autoload::Terser::VERSION}:#{VERSION}:#{::Sprockets::DigestUtils.digest(@options)}"
+      @terser = Autoload::Terser.new(@options)
     end
+
+    def self.instance
+      @instance ||= new
+    end
+
+    def self.call(input)
+      instance.call(input)
+    end
+
+    def self.cache_key
+      instance.cache_key
+    end
+
+    attr_reader :cache_key
 
     def call(input)
       input_options = { source_map: { filename: input[:filename] } }
