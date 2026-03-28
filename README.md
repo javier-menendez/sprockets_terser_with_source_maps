@@ -24,6 +24,10 @@ to generate source maps using terser as compressor.
   </thead>
 <tbody>
     <tr>
+        <td>8.x</td>
+        <td>&checkmark;</td>
+    </tr>
+    <tr>
         <td>7.x</td>
         <td>&checkmark;</td>
     </tr>

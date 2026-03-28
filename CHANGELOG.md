@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.0 (28 March 2026)
+
+- Implement autoloading for Terser and update Compressor class
+- CI update with Rails 7.2, 8.0, 8.1
+
 ## 2.1.0 (27 April 2024)
 
 - Terser dependency to ~> 1.2
