@@ -7,4 +7,3 @@ gemspec path: '..'
 
 gem 'railties', '~> 8.1.0'
 gem 'sprockets', '~> 4.0'
-
