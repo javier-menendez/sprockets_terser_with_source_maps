@@ -25,8 +25,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'terser', '~> 1.2'
 
   spec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'ostruct'
   spec.add_development_dependency 'railties', '>= 4.2'
-  spec.add_development_dependency 'rake', '~> 12.0'
+  spec.add_development_dependency 'rake', '>= 12.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop'
 
