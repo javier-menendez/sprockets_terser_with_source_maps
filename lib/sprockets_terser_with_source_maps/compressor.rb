@@ -10,8 +10,8 @@ module SprocketsTerserWithSourceMaps
     attr_accessor :logger
 
     def initialize(options = {})
-      @logger = Logger.new($stdout)
-      @logger.level = Logger::INFO
+      @logger = ::Logger.new($stdout)
+      @logger.level = ::Logger::INFO
       @options = options.merge(Rails.application.config.assets.terser.to_h)
       @cache_key = -"Terser:#{Autoload::Terser::VERSION}:#{VERSION}:#{::Sprockets::DigestUtils.digest(@options)}"
       @terser = Autoload::Terser.new(@options)
