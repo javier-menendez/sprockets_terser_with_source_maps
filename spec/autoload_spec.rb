@@ -31,12 +31,15 @@ RSpec.describe SprocketsTerserWithSourceMaps::Autoload do
         puts 'OK'
       RUBY
 
-      output, status = Bundler.with_unbundled_env do
-        Open3.capture2e(RbConfig.ruby, '-I', File.expand_path('..', __dir__), '-I', __dir__, '-e', script)
+      gemfile = ENV['BUNDLE_GEMFILE'] || File.expand_path('../../Gemfile', __dir__)
+      env = { 'BUNDLE_GEMFILE' => gemfile }
+
+      stdout, stderr, status = Bundler.with_unbundled_env do
+        Open3.capture3(env, RbConfig.ruby, '-I', File.expand_path('..', __dir__), '-I', __dir__, '-e', script)
       end
 
-      expect(status).to be_success, "Subprocess failed:\n#{output}"
-      expect(output.strip).to eq('OK')
+      expect(status).to be_success, "Subprocess failed:\n#{stderr}"
+      expect(stdout.strip).to eq('OK')
     end
   end
 
